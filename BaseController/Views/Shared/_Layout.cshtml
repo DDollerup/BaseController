@@ -1,0 +1,27 @@
+﻿@using BaseController.Models.BaseModels
+@using BaseController.Models.ViewModels
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BaseController Eksempel</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                @foreach (Site item in (ViewBag.LayoutModel as LayoutModel).Sites)
+                {
+                    <li>
+                        <a href="/@item.Controller/@item.Action">@item.LinkName</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </header>
+    <div> 
+        @RenderBody()
+    </div>
+</body>
+</html>
